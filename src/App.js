@@ -1,14 +1,18 @@
-import logo from './logo.svg';
 import './App.css';
 import {BrowserRouter, Routes, Route} from "react-router-dom";
-
+import Home from "./Home"
+import Contact  from './Contact';
+import About from './About';
+import Error from "./Error"
 function App() {
   return (
     <BrowserRouter>
       <Routes>
-        <Route path='/' element={<div>Hello from home</div>}></Route>
-        <Route path='/contact' element={<div>Hello from contact page</div>}></Route>
-        <Route path='/help' element={<div>Hello from help page</div>}></Route>
+        <Route path='/' element={<Home/>}>
+        <Route path='/About' element={<About/>}></Route>
+        <Route path='/Contact' element={<Contact/>}></Route>
+        <Route path='*' element={<Error/>}></Route>
+        </Route>
       </Routes>
     </BrowserRouter>
   );
